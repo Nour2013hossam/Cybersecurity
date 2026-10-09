@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>يقظ — اختبر نفسك قبل ما الهاكر يختبرك</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EDF1F6;--sf:#fff;--ink:#16213A;--mu:#5B6784;--ln:#D8DFEA;--ac:#4338CA;--ac2:#E8E7FC;--ok:#0F8A5F;--okb:#DDF3EA;--bad:#D9304A;--badb:#FBE1E5;--wr:#B97800;--wrb:#FFF1D0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1424;--sf:#172039;--ink:#E8ECF7;--mu:#9AA6C5;--ln:#2A3556;--ac:#8E8BFF;--ac2:#25285A;--ok:#3DD598;--okb:#12392F;--bad:#FF6B81;--badb:#451D2A;--wr:#F5B73B;--wrb:#41330F}}
+:root[data-theme="dark"]{--bg:#0E1424;--sf:#172039;--ink:#E8ECF7;--mu:#9AA6C5;--ln:#2A3556;--ac:#8E8BFF;--ac2:#25285A;--ok:#3DD598;--okb:#12392F;--bad:#FF6B81;--badb:#451D2A;--wr:#F5B73B;--wrb:#41330F}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 "IBM Plex Sans Arabic",Tahoma,sans-serif}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--sf);border-bottom:1px solid var(--ln);display:flex;align-items:center;gap:12px;padding:8px 16px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:20px}
+nav{display:flex;gap:4px;margin-inline-start:auto;overflow-x:auto}
+nav button{border:0;background:none;padding:8px 14px;border-radius:999px;color:var(--mu);font-weight:500;white-space:nowrap}
+nav button[aria-selected=true]{background:var(--ac);color:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:clamp(30px,7vw,48px);line-height:1.25;margin:8px 0 12px;font-weight:700}
+h2{font-size:24px;margin:0 0 8px}
+p{margin:0 0 12px}.mu{color:var(--mu)}
+.btn{background:var(--ac);color:#fff;border:0;padding:12px 24px;border-radius:12px;font-weight:700}
+.btn.g{background:var(--ac2);color:var(--ac)}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:20px;margin:16px 0}
+.mini{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:16px;margin:20px 0;max-width:420px}
+.lnk{color:var(--ac);text-decoration:underline;cursor:pointer;background:none;border:0;padding:0}
+.tip{font-size:14px;margin-top:8px;color:var(--mu);min-height:44px}.tip b{color:var(--bad);direction:ltr;unicode-bidi:embed;font-family:ui-monospace,monospace}
+.bar{height:8px;background:var(--ln);border-radius:9px;overflow:hidden;margin-bottom:6px}.bar i{display:block;height:100%;background:var(--ac);transition:width .3s}
+.em{border:1px solid var(--ln);border-radius:14px;overflow:hidden;background:var(--sf)}
+.em .h{display:flex;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--ln);background:var(--bg)}
+.av{width:40px;height:40px;border-radius:50%;background:var(--ac);color:#fff;display:grid;place-items:center;font-weight:700}
+.em .b{padding:16px}.mono{direction:ltr;text-align:left;font:13px ui-monospace,monospace;color:var(--bad);word-break:break-all}
+.sms{background:var(--bg);border-radius:20px;padding:16px}.sms .bub{background:var(--sf);border:1px solid var(--ln);padding:12px 16px;border-radius:18px 18px 18px 4px;max-width:92%}
+.sms small{display:block;color:var(--mu);margin-bottom:6px}
+.real{display:none;margin-top:8px}.insp .real{display:block}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.row .btn{flex:1;min-width:130px}
+.btn.bd{background:var(--bad)}.btn.ok{background:var(--ok);color:#06231a}
+.fb{border-radius:14px;padding:16px;margin-top:16px}.fb.ok{background:var(--okb)}.fb.bad{background:var(--badb)}
+.fb ul{margin:8px 0;padding-inline-start:20px}
+.big{font-size:56px;font-weight:700;line-height:1}
+.chk{display:flex;gap:10px;align-items:center;padding:6px 0}.chk span{width:22px;height:22px;border-radius:50%;border:2px solid var(--ln);display:grid;place-items:center;font-size:13px;flex:none}
+.chk.y span{background:var(--ok);border-color:var(--ok);color:#06231a}.chk.y{color:var(--ink)}.chk{color:var(--mu)}
+input[type=text],input[type=password]{width:100%;padding:12px 14px;border-radius:12px;border:2px solid var(--ln);background:var(--bg);color:var(--ink);font:18px ui-monospace,monospace;direction:ltr;text-align:left}
+.meter{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0 6px}.meter i{height:8px;border-radius:9px;background:var(--ln)}
+.opt{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0}.opt label{display:flex;gap:6px;align-items:center}
+.out{margin-top:12px;display:flex;gap:8px}.out input{flex:1}
+.lad{display:grid;gap:10px}.lad div{border:1px solid var(--ln);border-radius:12px;padding:12px 16px;background:var(--sf)}.lad b{display:block}
+.t1{border-inline-start:6px solid var(--wr)!important}.t2{border-inline-start:6px solid var(--ac)!important}.t3{border-inline-start:6px solid var(--ok)!important}
+.ck{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--ln)}.ck:last-child{border:0}.ck input{width:22px;height:22px;margin-top:5px;accent-color:var(--ok)}
+[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== bold student theme ===== */
+:root{--bg:#E6E3FF;--sf:#fff;--ink:#12102B;--mu:#4B4872;--ln:#12102B;--ac:#3A2CF5;--lk:#3A2CF5;--ac2:#FFE14D;--ok:#00B368;--okb:#BFF5DC;--bad:#FF3B5C;--badb:#FFD3DB;--wr:#B97800;--wrb:#FFE14D;--sh:4px 4px 0 #12102B;--dot:rgba(18,16,43,.13)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12102B;--sf:#1E1B45;--ink:#fff;--mu:#B9B5E6;--ln:#A9A3FF;--ac:#5A4DFF;--lk:#B4AEFF;--ac2:#FFE14D;--okb:#0F4A36;--badb:#5A1B2B;--sh:4px 4px 0 #000;--dot:rgba(255,255,255,.07)}}
+:root[data-theme="dark"]{--bg:#12102B;--sf:#1E1B45;--ink:#fff;--mu:#B9B5E6;--ln:#A9A3FF;--ac:#5A4DFF;--lk:#B4AEFF;--ac2:#FFE14D;--okb:#0F4A36;--badb:#5A1B2B;--sh:4px 4px 0 #000;--dot:rgba(255,255,255,.07)}
+body{font-family:"Rubik","IBM Plex Sans Arabic",Tahoma,sans-serif;background:var(--bg) radial-gradient(var(--dot) 1.6px,transparent 1.6px) 0 0/22px 22px}
+.lnk{color:var(--lk)}
+.top{border-bottom:3px solid var(--ln);background:var(--sf)}
+.brand{background:var(--ac2);color:#12102B;border:3px solid var(--ln);box-shadow:var(--sh);border-radius:12px;padding:0 14px;font-weight:900;transform:rotate(-2deg)}
+nav button{border:2px solid transparent;font-weight:800;color:var(--ink)}
+nav button[aria-selected=true]{background:var(--ac2);color:#12102B;border-color:var(--ln);box-shadow:3px 3px 0 var(--ln)}
+h1,h2{font-weight:900}
+.card,.em,.sms,.mini,.lad div,.fb{border:3px solid var(--ln);box-shadow:var(--sh);border-radius:18px}
+.em .h{border-bottom:3px solid var(--ln)}.sms .bub{border:3px solid var(--ln)}
+.btn{border:3px solid var(--ln);box-shadow:var(--sh);font-weight:800;transition:transform .08s,box-shadow .08s}
+.btn:active{transform:translate(4px,4px);box-shadow:none}
+.btn.g{background:var(--sf);color:var(--ink)}.btn.bd{background:var(--bad);color:#12102B}.btn.ok{background:var(--ok);color:#12102B}
+.bar{height:18px;background:var(--sf);border:3px solid var(--ln);border-radius:12px}.bar i{background:var(--ac2);border-inline-end:3px solid var(--ln)}
+.meter i{height:16px;background:var(--sf);border:3px solid var(--ln)}
+input[type=text],input[type=password]{border:3px solid var(--ln);box-shadow:var(--sh)}
+.hero{background:var(--ac);color:#fff;border:3px solid var(--ln);box-shadow:var(--sh);border-radius:26px;padding:28px 20px 32px}
+.hero h1{font-size:clamp(32px,8.5vw,58px);line-height:1.2;margin:18px 0 12px}
+.hero .mu{color:#DAD7FF;font-size:18px}
+.hero .btn{background:var(--ac2);color:#12102B;font-size:20px;padding:16px 34px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chips span{background:var(--ac2);color:#12102B;border:2px solid #12102B;border-radius:999px;padding:2px 14px;font-weight:800;font-size:14px}.chips span:nth-child(2){transform:rotate(2deg)}
+.mini{position:relative;transform:rotate(-1.5deg);margin:30px 0;color:var(--ink)}
+.stamp{display:inline-block;font-weight:900;font-size:22px;border:4px solid;border-radius:10px;padding:0 12px;margin-bottom:8px;transform:rotate(-6deg);animation:st .4s cubic-bezier(.2,1.6,.4,1) both;background:var(--sf)}
+.stamp.bd{color:var(--bad);border-color:var(--bad)}.stamp.ok{color:var(--ok);border-color:var(--ok)}
+@keyframes st{from{transform:rotate(-6deg) scale(2.4);opacity:0}}
+.fb{color:var(--ink)}
+.big{font-size:88px;font-weight:900;color:var(--lk);text-shadow:4px 4px 0 var(--ac2)}
+.lad div{box-shadow:3px 3px 0 var(--ln)}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="brand">🛡️ يقظ</div>
+ <nav role="tablist">
+  <button role="tab" aria-selected="true" data-p="quiz">اختبار التصيّد</button>
+  <button role="tab" aria-selected="false" data-p="pass">معمل الباسورد</button>
+  <button role="tab" aria-selected="false" data-p="fa">التحقق بخطوتين</button>
+ </nav>
+</header>
+<main class="wrap">
+
+<section id="quiz">
+ <div id="intro" class="hero">
+  <div class="chips"><span>🎣 تدريب مجاني</span><span>7 مواقف حقيقية</span><span>دقيقتين بس</span></div>
+  <h1>الهاكر مش هيبعتلك "أنا هاكر".<br>هتعرف تكشفه؟</h1>
+  <p class="mu">7 رسايل (إيميلات و SMS) بعضها سليم وبعضها مفبرك. احكم عليها، وبعدين شوف إيه اللي فاتك.</p>
+  <div class="mini"><div class="stamp bd" style="position:absolute;top:-20px;inset-inline-start:-6px;font-size:18px">فخ؟</div>
+   <b>من: الدعم الفني</b>
+   <p>حسابك هيتقفل النهاردة! <button class="lnk" id="demo">ادخل هنا وحدّث بياناتك</button></p>
+   <div class="tip" id="tip">جرّب: مرّر على الرابط أو اضغط عليه وشوف العنوان الحقيقي.</div>
+  </div>
+  <button class="btn" id="start">ابدأ الاختبار</button>
+ </div>
+ <div id="game" hidden>
+  <div class="bar"><i id="pb"></i></div>
+  <small class="mu" id="pc"></small>
+  <div id="msg"></div>
+  <div class="row" id="ans"><button class="btn bd" data-a="1">مفبرك (تصيّد)</button><button class="btn ok" data-a="0">سليم</button></div>
+  <div id="fb" hidden></div>
+ </div>
+ <div id="res" hidden></div>
+</section>
+
+<section id="pass" hidden>
+ <h2>معمل الباسورد</h2>
+ <p class="mu">اكتب أي باسورد تجربة وشوف بيتكسر في قد إيه. الفحص بيحصل على جهازك بس، ومتكتبش باسورد حقيقي عندك.</p>
+ <div class="card">
+  <input type="password" id="pw" placeholder="اكتب باسورد للتجربة" autocomplete="off" aria-label="باسورد للتجربة">
+  <label class="opt"><span><input type="checkbox" id="sh"> إظهار</span></label>
+  <div class="meter" id="mt"><i></i><i></i><i></i><i></i></div>
+  <b id="ml">اكتب حاجة عشان نبدأ</b>
+  <p class="mu" id="ct"></p>
+  <div id="cl"></div>
+ </div>
+ <div class="card">
+  <h2>اعمل باسورد قوي بضغطة</h2>
+  <label>الطول: <b id="ln">16</b> <input type="range" id="len" min="12" max="32" value="16"></label>
+  <div class="opt">
+   <label><input type="checkbox" class="cs" value="abcdefghijkmnopqrstuvwxyz" checked> حروف صغيرة</label>
+   <label><input type="checkbox" class="cs" value="ABCDEFGHJKLMNPQRSTUVWXYZ" checked> حروف كبيرة</label>
+   <label><input type="checkbox" class="cs" value="23456789" checked> أرقام</label>
+   <label><input type="checkbox" class="cs" value="!@#$%^&*-_=+?" checked> رموز</label>
+  </div>
+  <div class="out"><input type="text" id="gen" readonly aria-label="الباسورد المولّد"><button class="btn g" id="cp">نسخ</button></div>
+  <div class="row"><button class="btn" id="gb">ولّد باسورد جديد وجرّبه فوق</button></div>
+  <p class="mu" style="margin-top:12px">نصيحة: استخدم باسورد مختلف لكل حساب، وخزّنهم في مدير باسوردات بدل ما تحفظهم أو تكتبهم في ورقة.</p>
+ </div>
+</section>
+
+<section id="fa" hidden>
+ <h2>التحقق بخطوتين (2FA)</h2>
+ <p class="mu">حتى لو الهاكر عرف الباسورد، هيحتاج كمان حاجة معاك إنت. دي أهم خطوة بعد الباسورد القوي.</p>
+ <div class="lad">
+  <div class="t1"><b>رسالة SMS</b>أحسن من لا حاجة، لكن ممكن تتسرق بتبديل الشريحة أو بخداعك تقول الكود.</div>
+  <div class="t2"><b>تطبيق مصادقة (Authenticator)</b>الكود بيتولد على موبايلك ومبيتبعتش في الشبكة. اختيار ممتاز.</div>
+  <div class="t3"><b>Passkey أو مفتاح أمان</b>الأقوى، ومبينفعش معاه التصيّد.</div>
+ </div>
+ <div class="card">
+  <h2>خطتك</h2>
+  <div class="bar"><i id="fp" style="width:0"></i></div>
+  <small class="mu" id="ft"></small>
+  <div id="fl"></div>
+ </div>
+ <div class="card" style="background:var(--wrb)">
+  <b>قاعدة ذهبية:</b> مفيش حد محترم (بنك، جامعة، دعم فني) هيطلب منك كود التحقق. أول ما حد يطلبه، اعتبره نصاب.
+ </div>
+</section>
+</main>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// tabs
+$$('nav button').forEach(b=>b.onclick=()=>{$$('nav button').forEach(x=>x.setAttribute('aria-selected',x===b));['quiz','pass','fa'].forEach(id=>$('#'+id).hidden=id!==(b.dataset.p==='fa'?'fa':b.dataset.p));scrollTo(0,0)});
+// hero demo
+$('#demo').onclick=$('#demo').onmouseenter=()=>$('#tip').innerHTML='العنوان الحقيقي: <b>http://paypa1-secure.top/login</b><br>لاحظ الرقم 1 بدل حرف l.';
+
+// quiz data
+const Q=[
+{t:'e',n:'خدمة العملاء',a:'security@nbe-alert-verify.top',s:'تم تعليق حسابك البنكي',b:'عزيزي العميل، تم رصد نشاط مشبوه. لازم تأكد بياناتك خلال ساعتين وإلا هيتم إغلاق الحساب نهائيًا: {L}',l:['اضغط هنا لتأكيد البيانات','http://nbe-secure-login.top/verify'],bad:1,f:['العنوان مش الدومين الرسمي للبنك وفيه .top','تهديد وتوقيت ضيق (ساعتين)','"عزيزي العميل" من غير اسمك','بيطلب بيانات عن طريق لينك']},
+{t:'e',n:'Google',a:'no-reply@accounts.google.com',s:'تنبيه أمني: تسجيل دخول جديد',b:'تم تسجيل دخول لحسابك من جهاز جديد. لو ده إنت فمفيش داعي لأي إجراء. لو مش إنت، افتح حسابك من المتصفح بنفسك وغيّر الباسورد.',bad:0,f:['الدومين رسمي','مفيش ضغط أو تهديد','مبيطلبش منك تدخل بياناتك من لينك'],w:'ده تنبيه عادي. العلامة الحلوة إنه بيقولك تفتح حسابك بنفسك مش من لينك.'},
+{t:'s',n:'+20 100 555 0199',s:'',b:'فودافون كاش: مبروك كسبت 5000 جنيه! استلم جايزتك الآن {L}',l:['vf-cash-prize','http://vf-cash.win/claim'],bad:1,f:['جايزة من غير ما تشترك في سحب','رقم عادي مش اسم الشركة الرسمي','لينك بدومين غريب (.win)']},
+{t:'s',n:'Instagram',b:'482913 هو رمز التحقق الخاص بك. لا تشاركه مع أي شخص.',bad:0,f:['رسالة كود متوقعة بعد محاولة دخول منك','مفيش لينك','بتحذرك متشاركش الكود'],w:'سليمة لو إنت اللي بدأت تسجيل الدخول. لو جالك كود وإنت مطلبتش، يبقى فيه حد بيحاول يدخل حسابك: غيّر الباسورد.'},
+{t:'e',n:'مركز الدعم الجامعي',a:'it-support@univ-helpdesk.net',s:'آخر تنبيه: انتهاء صلاحية حساب الطالب',b:'لازم تحدّث الباسورد خلال 24 ساعة وإلا هيتم إيقاف حسابك الجامعي ومش هتقدر تشوف نتيجتك: {L}',l:['تحديث كلمة المرور','http://univ-portal-login.net/reset'],bad:1,f:['الدومين مش دومين الجامعة (.edu.eg)','ضغط بالوقت وتهديد بفقدان النتيجة','الجامعة مبتطلبش تحديث باسورد بلينك في إيميل']},
+{t:'s',n:'شحن سريع',b:'طردك محتجز في الجمارك. ادفع رسوم 25 جنيه لإعادة الجدولة: {L}',l:['bit.ly/3xYz','http://bit.ly/3xYzPay'],bad:1,f:['لينك مختصر بيخبي الوجهة','طلب دفع صغير عشان تدخل بيانات الكارت','مفيش رقم شحنة أو اسمك']},
+{t:'e',n:'أ.د. منى (دكتورة المادة)',a:'mona.prof.help@gmail.com',s:'محتاجة خدمة سريعة',b:'أنا في اجتماع ومقدرش أتكلم. اشتريلي 3 كروت هدايا بقيمة 500 جنيه وابعتلي صورة الأكواد ضروري وبسرعة.',bad:1,f:['إيميل جيميل شخصي مش إيميل الجامعة','طلب كروت هدايا (الأسلوب المفضل للنصابين)','استعجال وإنها مش متاحة للتأكيد'],w:null}
+];
+let i=0,sc=0,miss={e:0,s:0};
+function render(){
+ const q=Q[i];$('#pb').style.width=(i/Q.length*100)+'%';$('#pc').textContent='رسالة '+(i+1)+' من '+Q.length;
+ const link=q.l?`<button class="lnk" data-r="${q.l[1]}" title="${q.l[1]}">${q.l[0]}</button>`:'';
+ const body=q.b.replace('{L}',link);
+ const real=q.l?`<div class="real"><span class="mu">الرابط الحقيقي:</span><div class="mono">${q.l[1]}</div></div>`:'';
+ $('#msg').innerHTML=q.t=='e'
+ ?`<div class="em" id="m"><div class="h"><div class="av">${q.n[0]}</div><div><b>${q.n}</b><div class="real mono" style="color:var(--mu)">${q.a}</div></div></div><div class="b"><b>${q.s}</b><p style="margin-top:8px">${body}</p>${real}</div></div>`
+ :`<div class="sms" id="m"><small>رسالة نصية من ${q.n}</small><div class="bub">${body}</div>${real}</div>`;
+ const ins=document.createElement('button');ins.className='btn g';ins.style.marginTop='12px';ins.textContent='افحص المرسل والرابط';
+ ins.onclick=()=>{$('#m').classList.add('insp');ins.hidden=true};$('#msg').append(ins);
+ $$('#msg .lnk').forEach(l=>l.onclick=()=>{$('#m').classList.add('insp');ins.hidden=true});
+ $('#ans').hidden=false;$('#fb').hidden=true;
+}
+$('#start').onclick=()=>{$('#intro').hidden=true;$('#game').hidden=false;i=sc=0;miss={e:0,s:0};render()};
+$$('#ans button').forEach(b=>b.onclick=()=>{
+ const q=Q[i],ok=+b.dataset.a===q.bad;if(ok)sc++;else miss[q.t]++;
+ $('#m').classList.add('insp');$('#ans').hidden=true;$$('#msg > .btn').forEach(x=>x.hidden=true);
+ const fb=$('#fb');fb.hidden=false;fb.className='fb '+(ok?'ok':'bad');
+ fb.innerHTML=`<div class="stamp ${q.bad?'bd':'ok'}">${q.bad?'تصيّد!':'سليمة'}</div><br><b>${ok?'برافو، إجابة صح':'للأسف، إجابة غلط'}: الرسالة دي ${q.bad?'مفبركة':'سليمة'}.</b>${q.w?`<p>${q.w}</p>`:''}<ul>${q.f.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+ const n=document.createElement('button');n.className='btn';n.textContent=i<Q.length-1?'الرسالة اللي بعدها':'شوف نتيجتك';
+ n.onclick=()=>{i++;i<Q.length?render():end()};fb.append(n);n.focus();
+});
+function end(){
+ $('#game').hidden=true;$('#res').hidden=false;
+ const r=sc>=6?['حارس يقظ','عينك فاتحة. كمّل واحمي زمايلك كمان.']:sc>=4?['شبه جاهز','بتكشف أغلب الحاجات، راجع العلامات اللي فاتتك.']:['محتاج تدريب','عادي، ده بالظبط سبب الاختبار. جرّب تاني بعد ما تراجع علامات الخطر.'];
+ $('#res').innerHTML=`<div class="card"><div class="big">${sc}/${Q.length}</div><h2 style="margin-top:12px">${r[0]}</h2><p>${r[1]}</p>${miss.e?`<p>غلطت في ${miss.e} إيميل.</p>`:''}${miss.s?`<p>غلطت في ${miss.s} SMS.</p>`:''}
+ <b>قبل ما تضغط على أي لينك:</b><ul><li>بص على الدومين الحقيقي مش النص اللي ظاهر</li><li>أي استعجال أو تهديد = شك</li><li>متدخلش بياناتك من لينك، افتح الموقع بنفسك</li><li>مفيش حد شرعي بيطلب كود التحقق</li></ul>
+ <div class="row"><button class="btn" id="again">إعادة الاختبار</button><button class="btn g" id="gopw">جرّب معمل الباسورد</button></div></div>`;
+ $('#again').onclick=()=>{$('#res').hidden=true;$('#intro').hidden=false};
+ $('#gopw').onclick=()=>$('nav button[data-p=pass]').click();
+}
+
+// password lab
+const COMMON=/password|pass|qwerty|admin|iloveyou|welcome|letmein|egypt|ahmed|mohamed|mohammed|123456|abc123|1q2w3e/i;
+const chk=[
+ ['12 حرف أو أكتر',p=>p.length>=12],['حرف صغير',p=>/[a-z]/.test(p)],['حرف كبير',p=>/[A-Z]/.test(p)],
+ ['رقم',p=>/\d/.test(p)],['رمز خاص (!@#$)',p=>/[^A-Za-z0-9]/.test(p)],
+ ['من غير كلمات شائعة أو أرقام متسلسلة',p=>!COMMON.test(p)&&!/(.)\1{2,}/.test(p)&&!/(19|20)\d\d/.test(p)]
+];
+function dur(s){const m=[[3.15e9*1e3,'آلاف السنين'],[3.15e7,'سنة'],[86400,'يوم'],[3600,'ساعة'],[60,'دقيقة']];
+ if(s<1)return'أقل من ثانية';if(s>3.15e12)return'ملايين السنين';
+ for(const[v,u]of m)if(s>=v)return Math.round(s/v)+' '+u;return Math.round(s)+' ثانية'}
+function test(){
+ const p=$('#pw').value,res=chk.map(([t,f])=>[t,p&&f(p)]);
+ $('#cl').innerHTML=res.map(([t,y])=>`<div class="chk ${y?'y':''}"><span>${y?'✓':''}</span>${t}</div>`).join('');
+ if(!p){$$('#mt i').forEach(x=>x.style.background='');$('#ml').textContent='اكتب حاجة عشان نبدأ';$('#ct').textContent='';return}
+ let pool=0;if(/[a-z]/.test(p))pool+=26;if(/[A-Z]/.test(p))pool+=26;if(/\d/.test(p))pool+=10;if(/[^A-Za-z0-9]/.test(p))pool+=33;
+ let e=p.length*Math.log2(pool||1);if(COMMON.test(p))e=Math.min(e,20);if(/(.)\1{2,}/.test(p))e*=.7;
+ const s=Math.pow(2,e)/1e10,lv=e<36?0:e<60?1:e<80?2:3,col=['var(--bad)','var(--wr)','var(--ac)','var(--ok)'][lv];
+ $$('#mt i').forEach((x,k)=>x.style.background=k<=lv?col:'');
+ $('#ml').textContent=['ضعيف جدًا','متوسط','قوي','قوي جدًا'][lv];
+ $('#ct').textContent='هاكر بجهاز سريع ممكن يكسره في: '+dur(s);
+}
+$('#pw').oninput=test;$('#sh').onchange=e=>$('#pw').type=e.target.checked?'text':'password';test();
+function rnd(n){const a=new Uint32Array(1);const lim=4294967296-4294967296%n;do crypto.getRandomValues(a);while(a[0]>=lim);return a[0]%n}
+function gen(){
+ const sets=$$('.cs:checked').map(x=>x.value);if(!sets.length){$('#gen').value='اختار نوع واحد على الأقل';return}
+ const all=sets.join(''),L=+$('#len').value;let o=sets.map(s=>s[rnd(s.length)]);
+ while(o.length<L)o.push(all[rnd(all.length)]);
+ for(let k=o.length-1;k>0;k--){const j=rnd(k+1);[o[k],o[j]]=[o[j],o[k]]}
+ $('#gen').value=o.join('');return o.join('')
+}
+$('#len').oninput=e=>$('#ln').textContent=e.target.value;
+$('#gb').onclick=()=>{const p=gen();if(p){$('#pw').value=p;test()}};
+$('#cp').onclick=async()=>{try{await navigator.clipboard.writeText($('#gen').value);$('#cp').textContent='تم النسخ'}catch(e){$('#gen').select();$('#cp').textContent='اضغط Ctrl+C'}setTimeout(()=>$('#cp').textContent='نسخ',1500)};
+gen();
+
+// 2FA checklist
+const F=['إيميلك الأساسي (جيميل أو أوتلوك)','حسابات السوشيال (فيسبوك، انستجرام، تيك توك)','حساب الجامعة والبوابة الإلكترونية','البنك أو المحفظة الإلكترونية','حساب تخزين الباسوردات','حساب الألعاب (Steam، PlayStation...)'];
+$('#fl').innerHTML=F.map((t,k)=>`<label class="ck"><input type="checkbox" class="fc"><span>فعّل التحقق بخطوتين على: <b>${t}</b></span></label>`).join('');
+$$('.fc').forEach(c=>c.onchange=()=>{const n=$$('.fc:checked').length;$('#fp').style.width=n/F.length*100+'%';$('#ft').textContent=n==F.length?'ممتاز! حساباتك اتحمت بطبقة تانية.':n+' من '+F.length+' اتفعّلوا. ابدأ بالإيميل لأن بيه بيتم استرجاع باقي الحسابات.'});
+$('#ft').textContent='ابدأ بالإيميل لأن بيه بيتم استرجاع باقي الحسابات.';
+</script>
+</body>
+</html>
