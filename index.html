@@ -81,6 +81,67 @@ details.card h4{margin:12px 0 2px;color:var(--lk)}
 .cert h2{font-size:30px}.cert .nm2{font-size:30px;font-weight:900;color:#3A2CF5;border-bottom:3px solid #FFE14D;display:inline-block;padding:0 16px;margin:8px 0}
 .foot{text-align:center;color:var(--mu);font-size:13px;margin-top:32px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+/* Phone layout */
+@media(max-width:600px){
+ html{scroll-padding-top:112px}
+ body{font-size:16px;background-size:18px 18px}
+ .top{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;padding:7px 10px 0;}
+ .brand{justify-self:start;padding:0 11px;font-size:18px;border-width:2px;box-shadow:2px 2px 0 var(--ln)}
+ .ic{min-width:44px;min-height:44px;padding:4px;border-width:2px;font-size:17px}
+ nav{grid-column:1/-1;grid-row:2;min-width:0;width:calc(100vw - 20px);gap:7px;margin:0 -10px;padding:7px 10px 10px;scroll-snap-type:x proximity;overscroll-behavior-x:contain;}
+ nav button{min-height:42px;padding:7px 14px;border:2px solid var(--ln);background:var(--bg);font-size:14px;scroll-snap-align:start}
+ nav button[aria-selected=true]{box-shadow:2px 2px 0 var(--ln)}
+ .wrap{padding:16px 12px 40px}
+ h1{font-size:clamp(30px,9vw,42px)}
+ h2{font-size:22px;line-height:1.35}
+ .hero{padding:19px 15px 22px;border-radius:20px}
+ .hero h1{font-size:clamp(30px,9vw,42px);margin:14px 0 10px}
+ .hero .mu{font-size:16px}
+ .hero .btn{width:100%;min-height:54px;padding:12px 18px}
+ .chips{gap:7px}
+ .chips span,.chips button{padding:5px 10px;font-size:13px}
+ .mini{margin:24px 4px 22px;max-width:none;padding:14px;transform:rotate(-.5deg)}
+ .card{padding:16px;margin:13px 0;border-radius:16px}
+ .btn{min-height:48px;padding:10px 15px;border-width:2px;box-shadow:3px 3px 0 var(--ln)}
+ .row{gap:9px}
+ .row .btn{min-width:calc(50% - 6px)}
+ .bar{height:16px}
+ .em .h{padding:11px 12px;gap:10px}
+ .em .b{padding:13px}
+ .sms{padding:12px}
+ .sms .bub{max-width:100%;padding:12px 13px}
+ .mono{font-size:12px;overflow-wrap:anywhere}
+ .tip{min-height:0}
+ .fb{padding:14px}
+ .big{font-size:68px}
+ .out{align-items:stretch;gap:8px}
+ .out input{min-width:0;font-size:15px;padding:10px}
+ .out .btn{flex:none;min-width:64px;padding-inline:10px}
+ .opt{gap:10px}
+ .opt label{min-height:40px}
+ input[type=text],input[type=password]{min-height:50px;font-size:16px;padding:11px 12px}
+ input[type=range]{width:100%;display:block;margin:10px 0;accent-color:var(--ac)}
+ .stage{height:145px;padding-inline:0}
+ .nd{width:29%;font-size:34px;padding:7px 0;border-radius:14px}
+ .nd small{font-size:11px}
+ .pk{font-size:28px}
+ .lad{gap:9px}
+ .lad div{padding:12px}
+ .ck{gap:10px;padding:13px 0}
+ .ck input{width:24px;height:24px;margin-top:2px}
+ details.card summary{font-size:17px;line-height:1.5}
+ .cert{padding:20px 12px;border-width:5px}
+ .cert h2{font-size:26px}
+ .cert .nm2{font-size:24px;max-width:100%;overflow-wrap:anywhere}
+ .foot{margin-top:24px;padding-inline:8px}
+}
+@media(max-width:380px){
+ .wrap{padding-inline:10px}
+ .hero{padding-inline:13px}
+ .chips span,.chips button{font-size:12px;padding-inline:8px}
+ .row .btn{min-width:100%}
+ .stage{height:132px}
+}
 @media print{body *{visibility:hidden}#certbox,#certbox *{visibility:visible}#certbox{position:absolute;inset:0;margin:20px;border-color:#000}}
 </style>
 </head>
